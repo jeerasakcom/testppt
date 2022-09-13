@@ -136,6 +136,10 @@ class _HomePageDesignState extends State<HomePageDesign> {
         animationCurve: Curves.fastOutSlowIn,
 
         images: [
+          AssetImage('assets/images/tdvp0010.jpg'),
+          AssetImage('assets/images/tdvp0020.jpg'),
+          AssetImage('assets/images/tdvp0030.jpg'),
+          AssetImage('assets/images/tdvp0040.jpg'),
           AssetImage('assets/images/oc102.png'),
           AssetImage('assets/images/oc103.png'),
           AssetImage('assets/images/oc104.png'),
