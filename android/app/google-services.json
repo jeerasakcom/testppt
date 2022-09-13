@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "434997332967",
+    "project_id": "modprinting-4aff1",
+    "storage_bucket": "modprinting-4aff1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434997332967:android:311a9cb43221b4daadcb42",
+        "android_client_info": {
+          "package_name": "com.example.modprinting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434997332967-12ea05u2qhtuem0a2j8o7rpuvajnt8c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.modprinting",
+            "certificate_hash": "037f76f4993241a9e3cc4f569d14d2f36486764c"
+          }
+        },
+        {
+          "client_id": "434997332967-ne3111mn5ck7s0e0tdpd9f45lsc9h49a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCttpEAGtBN9ZoD9ddKOJz-ph5mbAC1gWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434997332967-ne3111mn5ck7s0e0tdpd9f45lsc9h49a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

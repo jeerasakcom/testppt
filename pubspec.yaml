@@ -1,0 +1,101 @@
+name: modprinting
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  splashscreen: ^1.3.5
+  google_maps_flutter: ^2.1.5
+  shared_preferences: ^2.0.15
+  flutter_image_slideshow: ^0.1.2
+  sqflite: ^2.0.3+1
+  image_picker: ^0.8.5+3
+  firebase_core: ^1.19.2
+  firebase_auth: ^3.4.2
+  firebase_storage: ^10.3.2
+  cloud_firestore: ^3.3.0
+  firebase_messaging: ^11.2.11
+  dio:
+  #http: ^0.11.3+16
+  http: ^0.13.0
+  google_fonts: ^2.0.0
+  flutter_icons: ^1.1.0
+  carousel_pro: ^1.0.0
+  flutter_svg: ^0.22.0
+  font_awesome_flutter:
+  flutter_calendar_carousel:
+  flutter_rounded_date_picker:
+  url_launcher:
+  steps_indicator:
+  toast:
+  badges:
+  sweetalert:
+  #table_calendar:
+  flutter_auth_buttons:
+  #flutter_dialogflow:
+  datetime_picker_formfield: ^2.0.0
+  provider: ^4.3.2
+  image_cropper:
+  #buddhist_datetime_dateformat:
+  intl: ^0.17.0
+  dialog_flowtter: ^0.3.3
+  carousel_slider: ^4.1.1
+
+  bubble: ^1.1.9+1
+  buddhist_datetime_dateformat: ^1.0.6
+  table_calendar: ^2.3.1
+  localization: ^2.1.0
+  expandable: ^5.0.1
+
+
+  file_picker: ^4.2.4
+
+
+
+  select_card: ^0.0.9
+  dialogflow_flutter: ^0.0.3
+
+
+
+
+
+
+
+
+
+dependency_overrides:
+  intl: ^0.17.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_localizations:
+    sdk: flutter         
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+  fonts:
+    - family: THSarabunNew
+      fonts:
+        - asset: assets/fonts/THSarabunNew.ttf
+        - asset: assets/fonts/THSarabunNew Bold.ttf
+        - asset: assets/fonts/THSarabunNew BoldItalic.ttf
+        - asset: assets/fonts/THSarabunNew Italic.ttf
+
+    - family: Charmonman
+      fonts:
+        - asset: assets/fonts/Charmonman-Bold.ttf
+        - asset: assets/fonts/Charmonman-Regular.ttf
+
