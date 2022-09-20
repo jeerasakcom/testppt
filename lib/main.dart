@@ -2,11 +2,10 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:modprinting/components/admin/admin/mis_addadmin.dart';
 import 'package:modprinting/components/guest/homescreen/homescreen.dart';
 import 'package:modprinting/utility/stylepro.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,16 +27,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        //primaryColor: Color(0xff0d569f),
+          //primaryColor: Color(0xff0d569f),
           primaryColor: Color(0xff041f78),
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.white),
-      home:  SplashPage(),
+      home: 
+     // AddAdminPage(),
+      SplashPage(),
     );
   }
 }
-
-
 
 class SplashPage extends StatefulWidget {
   @override
@@ -67,20 +66,30 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Container(
         constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+              Color(0xff004080),
+              Color(0xff002040),
+            ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
               'assets/images/logo.png',
-              width: 150,
-              height: 150,
+              width: 175,
+              height: 175,
             ),
+            /*
             Text(
               'โรงพิมพ์อาสารักษาดินแดน กรมการปกครอง\n'
                   'Territorial Defence Volunteers Printing',
               textAlign: TextAlign.center,
               style: StyleProjects().TopicMainT3,
             ),
+            */
           ],
         ),
       ),

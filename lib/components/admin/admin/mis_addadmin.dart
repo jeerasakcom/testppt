@@ -10,7 +10,6 @@ import 'package:modprinting/utility/dialog.dart';
 import 'package:modprinting/utility/stylepro.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-
 class AddAdminPage extends StatefulWidget {
   @override
   _AddAdminPageState createState() => _AddAdminPageState();
@@ -19,8 +18,12 @@ class AddAdminPage extends StatefulWidget {
 class _AddAdminPageState extends State<AddAdminPage> {
   File? file;
   String? level = 'admin';
-  String? images, fname, lname, address, department, phone, email, password, token;
-
+  String? images, fname, lname, phone, email, password, token;
+  String? address = 'admin';
+  String? subdistrict = 'admin';
+  String? district = 'admin';
+  String? province = 'admin';
+  String? zipcode = 'admin';
 
   @override
   void initState() {
@@ -34,7 +37,6 @@ class _AddAdminPageState extends State<AddAdminPage> {
       print('token = $token');
     });
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class _AddAdminPageState extends State<AddAdminPage> {
                     StyleProjects().boxSpaceTop2,
                     blockfname(),
                     blocklname(),
-                    blockdepartment(),
+                    //blockdepartment(),
                     blockphone(),
                     blockemail(),
                     blockPassword(),
@@ -214,7 +216,7 @@ class _AddAdminPageState extends State<AddAdminPage> {
         margin: EdgeInsets.only(bottom: 16),
         width: 250,
         child: TextField(
-          maxLength: 10,
+          //maxLength: 10,
           onChanged: (value) => phone = value.trim(),
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
@@ -374,8 +376,6 @@ class _AddAdminPageState extends State<AddAdminPage> {
                 fname!.isEmpty ||
                 lname == null ||
                 lname!.isEmpty ||
-                address == null ||
-                address!.isEmpty ||
                 phone == null ||
                 phone!.isEmpty ||
                 email == null ||

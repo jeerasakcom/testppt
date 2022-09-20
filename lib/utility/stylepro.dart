@@ -25,6 +25,20 @@ class StyleProjects {
   //img
   static String avatar = 'assets/images/avatar.png';
 
+  
+  TextStyle contentstyle1 = TextStyle(
+      fontFamily: 'THSarabunNew',
+      color: const Color(0xffffda7a),
+      fontWeight: FontWeight.bold,
+      fontSize: 32);
+  
+    TextStyle contentstyle2 = TextStyle(
+      fontFamily: 'THSarabunNew',
+      color: const Color(0xffffda7a),
+      fontWeight: FontWeight.bold,
+      fontSize: 24);
+
+ 
   //
   TextStyle H10style = TextStyle(
       fontFamily: 'THSarabunNew',
