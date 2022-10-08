@@ -61,6 +61,9 @@ dependencies:
   select_card: ^0.0.9
   dialogflow_flutter: ^0.0.3
 
+#card news page
+  expansion_tile_card: ^2.0.0
+
 
 
 

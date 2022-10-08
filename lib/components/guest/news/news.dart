@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:async';
+import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:http/http.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,18 +8,24 @@ import 'dart:math' as math;
 import 'package:expandable/expandable.dart';
 import 'package:modprinting/utility/stylepro.dart';
 
-class InfotdvpScreen extends StatefulWidget {
+class NewsPage extends StatefulWidget {
   @override
-  _InfotdvpScreenState createState() => _InfotdvpScreenState();
+  _NewsPageState createState() => _NewsPageState();
 }
 
-class _InfotdvpScreenState extends State<InfotdvpScreen> {
+class _NewsPageState extends State<NewsPage> {
   String? id;
   final db = FirebaseFirestore.instance;
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      ),
+    );
+
     return Scaffold(
       //backgroundColor: const Color(0xFFF7F7F7),
       //backgroundColor: const Color(0xFFC5C5C5),
@@ -130,6 +137,7 @@ class _InfotdvpScreenState extends State<InfotdvpScreen> {
                           final QueryDocumentSnapshot<Object?>? doc =
                               snapshot.data?.docs[index];
 
+/*
                           return ExpandableNotifier(
                               child: Padding(
                             //padding: const EdgeInsets.all(10),
@@ -734,6 +742,224 @@ class _InfotdvpScreenState extends State<InfotdvpScreen> {
                               ),
                             ),
                           ));
+                       
+                       
+                       */
+
+                          //
+                          return ExpandableNotifier(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
+                              child: ExpansionTileCard(
+                                /*
+                                leading: CircleAvatar(child: const Text('FT')),
+
+*/
+
+//
+                                /*
+                                title: Text(
+                                  'หัวข้อข่าว',
+                                  //style: StyleProjects().H10style,
+                                  textAlign: TextAlign.start,
+                                  style: StyleProjects().TopicMain8,
+                                ),
+
+                                */
+
+                                title: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 10),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        snapshot.data?.docs
+                                            .elementAt(index)['title'],
+                                        softWrap: true,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.start,
+                                        style: StyleProjects().TopicMain8,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                subtitle: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 10),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'วันที่ : ',
+                                        textAlign: TextAlign.start,
+                                        style: StyleProjects().TopicMain8,
+                                      ),
+                                      Text(
+                                        snapshot.data?.docs
+                                            .elementAt(index)['datetime'],
+                                        softWrap: true,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.start,
+                                        style: StyleProjects().TopicMain8,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                //
+                                children: <Widget>[
+                                  Divider(
+                                    thickness: 1.0,
+                                    height: 1.0,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0,
+                                        vertical: 8.0,
+                                      ),
+                                      /*
+                                      child: Text(
+                                        snapshot.data!.docs
+                                            .elementAt(index)['detail'],
+                                        softWrap: true,
+                                        overflow: TextOverflow.fade,
+                                        textAlign: TextAlign.start,
+                                        style: StyleProjects().TopicMain8,
+                                      ),
+                                      */
+
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.only(left: 10),
+                                            alignment: Alignment.bottomLeft,
+                                            child: Text(
+                                              snapshot.data!.docs
+                                                  .elementAt(index)['detail'],
+                                              softWrap: true,
+                                              overflow: TextOverflow.fade,
+                                              textAlign: TextAlign.start,
+                                              style: StyleProjects().TopicMain8,
+                                            ),
+                                          ),
+                                          StyleProjects().BoxSpace,
+                                          Container(
+                                            alignment: Alignment.center,
+                                            child: Image.network(
+                                              snapshot.data?.docs
+                                                  .elementAt(index)['images'],
+                                              fit: BoxFit.fill,
+                                              width: 250,
+                                              height: 300,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+
+                                      //
+                                    ),
+                                  ),
+                                  ButtonBar(
+                                    alignment: MainAxisAlignment.spaceAround,
+                                    buttonHeight: 52.0,
+                                    buttonMinWidth: 90.0,
+                                    children: <Widget>[
+                                      TextButton(
+                                        onPressed: () {},
+                                        child: Column(
+                                          children: <Widget>[
+                                            Icon(Icons.arrow_upward),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 2.0),
+                                            ),
+                                            //Text('Close'),
+                                            Text(
+                                              'ปิด',
+                                              textAlign: TextAlign.start,
+                                              style: StyleProjects().TopicMain8,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {},
+                                        child: Column(
+                                          children: <Widget>[
+                                            Icon(Icons.share_outlined),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 2.0),
+                                            ),
+                                            //Text('Close'),
+                                            Text(
+                                              'แชร์',
+                                              textAlign: TextAlign.start,
+                                              style: StyleProjects().TopicMain8,
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+
+                                  /*
+                ButtonBar(
+                  alignment: MainAxisAlignment.spaceAround,
+                  buttonHeight: 52.0,
+                  buttonMinWidth: 90.0,
+                  children: <Widget>[
+                    TextButton(
+                      style: flatButtonStyle,
+                      onPressed: () {
+                        cardA.currentState?.collapse();
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.arrow_upward),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2.0),
+                          ),
+                          Text('Close'),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      style: flatButtonStyle,
+                      onPressed: () {
+                        cardB.currentState?.toggleExpansion();
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.swap_vert),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2.0),
+                          ),
+                          Text('Toggle'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+             
+             */
+                                ],
+
+                                //
+                              ),
+                            ),
+
+                            //
+                          );
+
+                          //
                         });
                   },
                 ),
