@@ -116,6 +116,7 @@ class _NewsPageState extends State<NewsPage> {
                       .collection("News")
                       .orderBy('datetime', descending: true)
                       .snapshots(),
+                      
                   builder: (BuildContext context,
                       AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (!snapshot.hasData) {
