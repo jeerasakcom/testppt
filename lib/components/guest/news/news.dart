@@ -40,8 +40,12 @@ class _NewsPageState extends State<NewsPage> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: <Color>[
-                Color(0xff59d3fc),
-                Color(0xff124699),
+                // Color(0xff59d3fc),
+                // Color(0xff124699),
+                // Color(0xff00d4ff),
+                Color(0xff090979),
+               // Color(0xff233a58),
+                Color(0xff003399),
               ],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
@@ -116,7 +120,6 @@ class _NewsPageState extends State<NewsPage> {
                       .collection("News")
                       .orderBy('datetime', descending: true)
                       .snapshots(),
-                      
                   builder: (BuildContext context,
                       AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (!snapshot.hasData) {
@@ -774,6 +777,7 @@ class _NewsPageState extends State<NewsPage> {
                                       horizontal: 10, vertical: 10),
                                   child: Row(
                                     children: [
+                                      /*
                                       Text(
                                         snapshot.data?.docs
                                             .elementAt(index)['title'],
@@ -782,6 +786,22 @@ class _NewsPageState extends State<NewsPage> {
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.start,
                                         style: StyleProjects().TopicMain8,
+                                      ),
+                                     
+                                     */
+                                      Container(
+                                        width: 200,
+                                        //padding: EdgeInsets.only(left: 10),
+                                        alignment: Alignment.bottomLeft,
+                                        child: Text(
+                                          snapshot.data!.docs
+                                              .elementAt(index)['title'],
+                                          softWrap: true,
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.start,
+                                          style: StyleProjects().TopicMain8,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -836,6 +856,19 @@ class _NewsPageState extends State<NewsPage> {
 
                                       child: Column(
                                         children: [
+                                          Container(
+                                            padding: EdgeInsets.only(left: 10),
+                                            alignment: Alignment.bottomLeft,
+                                            child: Text(
+                                              snapshot.data!.docs
+                                                  .elementAt(index)['title'],
+                                              softWrap: true,
+                                              overflow: TextOverflow.fade,
+                                              textAlign: TextAlign.start,
+                                              style: StyleProjects().TopicMain8,
+                                            ),
+                                          ),
+                                          StyleProjects().boxSpace1,
                                           Container(
                                             padding: EdgeInsets.only(left: 10),
                                             alignment: Alignment.bottomLeft,
